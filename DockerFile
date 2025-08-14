@@ -14,7 +14,7 @@ RUN go mod download
 COPY . .
 
 # Build binary
-RUN go build -o ecommerce-backend ./cmd/api
+RUN CGO_ENABLED=0 GOOS=linux go build -o ecommerce-backend ./cmd/api
 
 # --- Run Stage ---
 FROM alpine:3.19
