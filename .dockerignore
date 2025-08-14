@@ -1,0 +1,18 @@
+# Binaries
+ecommerce-backend
+*.exe
+*.out
+
+# Vendor & build cache
+vendor/
+*.log
+*.tmp
+*.swp
+*.cache
+
+# Git
+.git
+.gitignore
+
+# Config (if not needed in container)
+.env
