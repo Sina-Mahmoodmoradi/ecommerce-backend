@@ -31,9 +31,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-volumes:
-  postgres_data:
-
 
 
 
@@ -49,3 +46,7 @@ volumes:
       DB_URL: >-
         postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?sslmode=${DB_SSLMODE}
     entrypoint: ["migrate"]       
+
+
+volumes:
+  postgres_data:
