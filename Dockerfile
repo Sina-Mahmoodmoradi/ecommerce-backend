@@ -1,5 +1,5 @@
 # --- Build Stage ---
-FROM golang:1.22-alpine AS builder
+FROM golang:1.24.5-alpine AS builder
 
 WORKDIR /app
 
@@ -23,9 +23,8 @@ WORKDIR /app
 
 # Install CA certificates (for HTTPS)
 RUN apk add --no-cache ca-certificates
-
 COPY --from=builder /app/ecommerce-backend .
-COPY config.yaml .    # Copy config if you want default dev config inside container
+COPY config.yaml .
 
 EXPOSE 8080
 
