@@ -2,9 +2,10 @@ package middleware
 
 import (
 	"time"
-	"go.uber.org/zap"
-	"github.com/gin-gonic/gin"
+
 	"github.com/Sina-Mahmoodmoradi/ecommerce-backend/internal/pkg/logger"
+	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
 )
 
 func GinLogger(l *logger.Logger) gin.HandlerFunc {

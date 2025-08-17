@@ -3,11 +3,12 @@ package main
 import (
 	"fmt"
 	"log"
+
+	"github.com/Sina-Mahmoodmoradi/ecommerce-backend/internal/config"
+	"github.com/Sina-Mahmoodmoradi/ecommerce-backend/internal/http/middleware"
+	"github.com/Sina-Mahmoodmoradi/ecommerce-backend/internal/pkg/logger"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
-	"github.com/Sina-Mahmoodmoradi/ecommerce-backend/internal/http/middleware"
-	"github.com/Sina-Mahmoodmoradi/ecommerce-backend/internal/config"
-	"github.com/Sina-Mahmoodmoradi/ecommerce-backend/internal/pkg/logger"
 )
 
 func main() {
