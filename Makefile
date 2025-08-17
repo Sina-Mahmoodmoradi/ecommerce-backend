@@ -1,15 +1,15 @@
-
-migrate-create:
-	docker compose run --rm migrate create -seq -ext sql -dir /migrations $(name)
+MIGRATE       = docker compose run --rm migrate
+MIGRATIONS_DIR = /migrations
 
 migrate-up:
-	docker compose run --rm migrate -path=/migrations -database $$DB_URL up
+	$(MIGRATE) up
 
 migrate-down:
-	docker compose run --rm migrate -path=/migrations -database $$DB_URL down 1
-
-migrate-version:
-	docker compose run --rm migrate -path=/migrations -database $$DB_URL version
+	$(MIGRATE) down 1
 
 migrate-force:
-	docker compose run --rm migrate -path=/migrations -database $$DB_URL force $(v)
+	$(MIGRATE) force $(version)
+
+# create a new migration file: make migrate-create name=create_users_table
+migrate-create:
+	$(MIGRATE) create -ext sql -dir $(MIGRATIONS_DIR) -seq $(name)
